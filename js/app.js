@@ -2,6 +2,7 @@ var app = new Vue({
   el: "#app",
   data: {
     selectedColor: { id: null },
+    backendURL:"https://gentle-island-71433.herokuapp.com",
     bg: "https://images.unsplash.com/photo-1520121401995-928cd50d4e27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
     message: "Hello Vue!",
     colors: [
@@ -19,7 +20,7 @@ var app = new Vue({
         id: 3,
         name: "blue",
         bg: "https://images.unsplash.com/photo-1581299327801-faeb40ea459e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1310&q=80",
-      },
+      }, 
     ],
   },
   computed: {
@@ -34,7 +35,7 @@ var app = new Vue({
   methods: {
     selectColor(color) {
       this.selectedColor = color;
-      this.changeColor(color.bg);
+      this.changeColor(this.backendURL+color.color_background.url);
     },
     changeColor: function (bg) {
       document.getElementsByTagName("body")[0].classList.add("black");
@@ -51,7 +52,16 @@ var app = new Vue({
   mounted() {
     this.changeColor(
       "https://images.unsplash.com/photo-1502691876148-a84978e59af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80"
-    );
+    ); 
+
+    fetch(this.backendURL+"/colors")
+      .then((response) => response.json())
+      .then((data) => {
+        this.colors = data
+        this.selectColor ( this.colors[0])
+      });
+
+      
     // fetch();
   },
 });
