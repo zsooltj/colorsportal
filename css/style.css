@@ -130,7 +130,7 @@ body.light-mode .video-bg:before {
   -webkit-backdrop-filter: saturate(3);
   backdrop-filter: saturate(3);
 }
-
+ 
 .app {
   background-color: var(--theme-bg-color);
   max-width: 1450px;
