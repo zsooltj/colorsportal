@@ -58,7 +58,7 @@ var app = new Vue({
       .then((response) => response.json())
       .then((data) => {
         this.colors = data
-        this.selectColor ( this.colors[0])
+        // this.selectColor ( this.colors[0])
       });
 
       
