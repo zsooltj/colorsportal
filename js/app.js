@@ -34,7 +34,10 @@ var app = new Vue({
   },
   methods: {
     selectColor(color) {
+      document.getElementById("scale").innerHTML = ""
       this.selectedColor = color;
+      this.doColors(color.name)
+      console.log(color.color_background)
       this.changeColor(this.backendURL+color.color_background.url);
     },
     changeColor: function (bg) {
@@ -48,6 +51,47 @@ var app = new Vue({
     changeDarkmode() {
       document.body.classList.toggle("light-mode");
     },
+    getGradColors(from, to, numberOfShades){
+      // generate a canvas context and store it in cache
+      var ctx =  document.createElement('canvas').getContext('2d');
+      // set our canvas dimensions according to the number of shades required
+      var w = ctx.canvas.width = numberOfShades || 10;
+      ctx.canvas.height = 1;
+      // create a linear gradient
+      // (to keep 'from' and 'to' values, we set its x to 1 and width to width -1) 
+      var grad = ctx.createLinearGradient(1,0,w-1, 0);
+      grad.addColorStop(0, from || 'white');
+      grad.addColorStop(1, to || 'black');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0,0,w,1);   // draw it
+      var data = ctx.getImageData(0,0,w,1); // get the pixels info ([r, g, b, a, r, g...])
+      var colors = [];
+      data.data.forEach(function(comp, i){
+        if(i%4===0){ // map each pixel in its own array
+          colors.push([]);
+          }
+        if(i%4===3){ // alpha
+          comp /= 255;
+          }
+        colors[colors.length - 1].push(comp);
+        });
+      return colors.map(function(c){
+        // return a CSS computed value
+        ctx.fillStyle = 'rgba('+c.join()+')';
+        return ctx.fillStyle;
+        });
+      },
+      doColors(color){
+        var shadesOfWhite = this.getGradColors(color, 'white', 30);
+        shadesOfWhite.forEach(this.generateSpan);
+      },
+      generateSpan(color){
+        var container = document.getElementById("scale");
+        var span = document.createElement('span');
+        span.style.backgroundColor = color;
+        span.classList.add('color');
+        container.appendChild(span);
+      }
   },
   mounted() {
     this.changeColor(
@@ -60,9 +104,6 @@ var app = new Vue({
         this.colors = data
         // this.selectColor ( this.colors[0])
       });
-
-      
-    // fetch();
   },
 });
 

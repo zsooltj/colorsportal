@@ -952,3 +952,10 @@ body.light-mode .video-bg:before {
   display:inline-block;
   margin:0 auto !important;
 }
+
+.color{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin:5px;
+  }
