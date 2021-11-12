@@ -71,9 +71,10 @@
                       Box title
                     </span>
                     <div class="app-card__subtext" style="text-align:left">
-                      <div
+                      <div v-if="selectedColor.nature"
                         class="imageContainer" :style="'width:100%;background:url('+backendURL+selectedColor.nature.formats.thumbnail.url+');'">
                       </div>
+                      <div class="imageContainer" v-else>Nincs megadva</div>
                     </div>
 
                   </div>
@@ -84,9 +85,10 @@
                       Box title
                     </span>
                     <div class="app-card__subtext" style="text-align:left">
-                      <div
+                      <div v-if="selectedColor.object_building"
                         class="imageContainer" :style="'width:100%;background:url('+backendURL+selectedColor.object_building.formats.thumbnail.url+');'">
                       </div>
+                      <div class="imageContainer" v-else>Nincs megadva</div>
                     </div>
                   </div>
 
