@@ -132,7 +132,7 @@
                   <!-- IDE JÖN AZ 1. sor 3. eleme  -->
                   <div class="app-card">
                     <span>
-                      {{selectedColor.symbols[1] ? selectedColor.symbols[0].symbol_name: ''}}
+                      {{selectedColor.symbols[1] ? selectedColor.symbols[1].symbol_name: ''}}
                     </span>
                     <div class="app-card__subtext" style="text-align:left">
                       <img :src="backendURL+selectedColor.symbols[1].symbol_image.formats.thumbnail.url" class="symbolimg" v-if="selectedColor.symbols[1]">
@@ -171,7 +171,7 @@
                   <!-- IDE JÖN AZ 1. sor 3. eleme  --> 
                   <div class="app-card">
                     <span>
-                      {{selectedColor.symbols[2] ? selectedColor.symbols[0].symbol_name: ''}}
+                      {{selectedColor.symbols[2] ? selectedColor.symbols[2].symbol_name: ''}}
                     </span>
                     <div class="app-card__subtext" style="text-align:left">
                       <img :src="backendURL+selectedColor.symbols[2].symbol_image.formats.thumbnail.url" class="symbolimg" v-if="selectedColor.symbols[2]">
