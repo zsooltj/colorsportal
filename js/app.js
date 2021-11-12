@@ -2,6 +2,7 @@ var app = new Vue({
   el: "#app",
   data: {
     selectedColor: { id: null },
+    generatedColors:[],
     backendURL:"https://jelolo-backend.tk",
     bg: "https://images.unsplash.com/photo-1520121401995-928cd50d4e27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
     message: "Hello Vue!",
@@ -34,7 +35,7 @@ var app = new Vue({
   },
   methods: {
     selectColor(color) {
-      document.getElementById("scale").innerHTML = ""
+      // document.getElementById("scale").innerHTML = ""
       this.selectedColor = color;
       this.doColors(color.name)
       console.log(color.color_background)
@@ -75,22 +76,29 @@ var app = new Vue({
           }
         colors[colors.length - 1].push(comp);
         });
-      return colors.map(function(c){
+        return colors.map(function(c){
         // return a CSS computed value
         ctx.fillStyle = 'rgba('+c.join()+')';
         return ctx.fillStyle;
         });
       },
       doColors(color){
-        var shadesOfWhite = this.getGradColors(color, 'white', 30);
-        shadesOfWhite.forEach(this.generateSpan);
+
+        this.generatedColors = randomColor({
+          count: 10,
+          hue: color
+       });
+        // var shadesOfWhite = this.getGradColors(color, 'white', 30);
+        // shades.forEach(this.generateSpan);
+
+
       },
       generateSpan(color){
-        var container = document.getElementById("scale");
-        var span = document.createElement('span');
-        span.style.backgroundColor = color;
-        span.classList.add('color');
-        container.appendChild(span);
+        // var container = document.getElementById("scale");
+        // var span = document.createElement('span');
+        // span.style.backgroundColor = color;
+        // span.classList.add('color');
+        // container.appendChild(span);
       }
   },
   mounted() {

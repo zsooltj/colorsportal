@@ -134,8 +134,7 @@ body.light-mode .video-bg:before {
 .app {
   background-color: var(--theme-bg-color);
   max-width: 1450px;
-  max-height: 860px;
-  height: 90vh;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -146,7 +145,7 @@ body.light-mode .video-bg:before {
   font-size: 15px;
   font-weight: 500;
   margin: 0 auto;
-  margin-top: 2%;
+  margin-top: 2vh;
 }
 
 .header {
@@ -533,7 +532,6 @@ body.light-mode .video-bg:before {
   color: #fff;
   border-radius: 20px;
   margin-top: 16px;
-  cursor: pointer;
   transition: 0.3s;
   white-space: nowrap;
 }
@@ -572,7 +570,6 @@ body.light-mode .video-bg:before {
   margin: 0;
   border-radius: 14px;
   border: 1px solid var(--theme-bg-color);
-  cursor: pointer;
 }
 .content-section ul li {
   list-style: none;
@@ -844,8 +841,7 @@ body.light-mode .video-bg:before {
   background-color: var(--content-bg);
   border-radius: 14px;
   border: 1px solid var(--theme-bg-color);
-  padding: 12px;
-  cursor: pointer;
+  padding: 5px 12px;
   transition: 0.3s ease;
 }
 .app-card:hover {
@@ -871,7 +867,7 @@ body.light-mode .video-bg:before {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.6em;
-  margin-top: 20px;
+  margin-top: 3px;
   padding-bottom: 0px;
   text-align: center !important;
 }
@@ -939,7 +935,7 @@ body.light-mode .video-bg:before {
 }
 
 .imageContainer{
-  height:14vh;
+  height:18vh;
   border-radius: 10px;
   background-size: cover !important;
   background-repeat: no-repeat !important;
@@ -954,8 +950,12 @@ body.light-mode .video-bg:before {
 }
 
 .color{
-  width: 20px;
-  height: 20px;
-  display: inline-block;
+  width: 60px;
+  height: 30px;
   margin:5px;
-  }
+  margin-bottom: -1px;
+}
+.colorContainer{
+  text-align: center;
+  display: inline-block;
+}

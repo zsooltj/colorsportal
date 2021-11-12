@@ -62,7 +62,6 @@
           <div class="main-container">
 
             <div class="content-wrapper">
-              <div id="scale"></div>
               <div class="content-section" v-if="selectedColor.id != null" style="margin-top:0">
                 <div class="apps-card">
                   <!-- IDE JÖN AZ 1. sor 1. eleme  -->
@@ -109,25 +108,25 @@
                   <!-- IDE JÖN AZ 1. sor 1. eleme  -->
                   <div class="app-card">
                     <span>
-                      hamarosan....
+                      Similar colors
+
                     </span>
-                    <!-- <div class="app-card__subtext" style="text-align:left">
-                      <div
-                        class="imageContainer" :style="'width:100%;background:url('+backendURL+selectedColor.nature.formats.thumbnail.url+');'">
+                    <div class="app-card__subtext" style="text-align:left;display:block;">
+                      <div v-for="c in generatedColors" :key="c" class="colorContainer">
+                        <div class="color" :style="'background:'+c"></div>
+                        <span style="font-size:12px;">{{c}}</span>
                       </div>
-                    </div> -->
+                    </div>
                   </div>
 
                   <!-- IDE JÖN AZ 1. sor 2. eleme  -->
                   <div class="app-card">
                     <span>
-                      hamarosan....
+                      hamarosan....              
                     </span>
-                    <!-- <div class="app-card__subtext" style="text-align:left">
-                      <div
-                        class="imageContainer" :style="'width:100%;background:url('+backendURL+selectedColor.object_building.formats.thumbnail.url+');'">
-                      </div>
-                    </div> -->
+                   <div class="app-card__subtext" style="text-align:left">
+                      
+                    </div>
                   </div>
 
                   <!-- IDE JÖN AZ 1. sor 3. eleme  -->
@@ -192,6 +191,7 @@
         </div>
       </div>
     </div>
+    <script src="js/randomColor.js" ></script>
     <script src="js/app.js?v=1233"></script>
 </body>
 
