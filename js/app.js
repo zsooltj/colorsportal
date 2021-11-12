@@ -3,6 +3,8 @@ var app = new Vue({
   data: {
     selectedColor: { id: null },
     generatedColors:[],
+    hex:null,
+    rgb:null,
     backendURL:"https://jelolo-backend.tk",
     bg: "https://images.unsplash.com/photo-1520121401995-928cd50d4e27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
     message: "Hello Vue!",
@@ -36,10 +38,15 @@ var app = new Vue({
   methods: {
     selectColor(color) {
       // document.getElementById("scale").innerHTML = ""
+      this.hex = color.name.colorNameToHex()
+      this.rgb = this.hex.replace("#","").convertToRGB()
+
       this.selectedColor = color;
       this.doColors(color.name)
       console.log(color.color_background)
       this.changeColor(this.backendURL+color.color_background.url);
+
+    
     },
     changeColor: function (bg) {
       document.getElementsByTagName("body")[0].classList.add("black");
@@ -86,7 +93,7 @@ var app = new Vue({
 
         this.generatedColors = randomColor({
           count: 10,
-          hue: color
+          hue: this.hex
        });
         // var shadesOfWhite = this.getGradColors(color, 'white', 30);
         // shades.forEach(this.generateSpan);
@@ -110,7 +117,7 @@ var app = new Vue({
       .then((response) => response.json())
       .then((data) => {
         this.colors = data
-        // this.selectColor ( this.colors[0])
+        this.selectColor ( this.colors[1])
       });
   },
 });

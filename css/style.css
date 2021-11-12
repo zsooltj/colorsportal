@@ -963,3 +963,9 @@ body.light-mode .video-bg:before {
 .btitle{
   text-transform: capitalize;
 }
+
+.colorbox{
+  height:60px;
+  width:100%;
+  border-radius: 10px;
+}

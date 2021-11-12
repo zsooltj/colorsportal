@@ -106,26 +106,26 @@
                 <br><br>
                 <div class="apps-card">
                   <!-- IDE JÖN AZ 1. sor 1. eleme  -->
-                  <div class="app-card">
+                   <div class="app-card">
                     <span>
-                      Similar colors
-
+                      Read more about {{selectedColor.name}}
                     </span>
                     <div class="app-card__subtext" style="text-align:left;display:block;">
-                      <div v-for="c in generatedColors" :key="c" class="colorContainer">
-                        <div class="color" :style="'background:'+c"></div>
-                        <span style="font-size:12px;">{{c}}</span>
+                      <div v-for="c in [1,2,3,4]" :key="c" class="">
+                        Link {{c}}<br>
                       </div>
                     </div>
                   </div>
 
+
                   <!-- IDE JÖN AZ 1. sor 2. eleme  -->
                   <div class="app-card">
-                    <span>
-                      hamarosan....              
-                    </span>
                    <div class="app-card__subtext" style="text-align:left">
-                      
+                      <div class="colorbox" :style="'background:'+selectedColor.name"></div>
+                      <div>Fordítás 1</div>
+                      <div>Fordítás 2</div>
+                      <div>Fordítás 3</div>
+                      <div>Fordítás 4</div>
                     </div>
                   </div>
 
@@ -146,26 +146,27 @@
                   <!-- IDE JÖN AZ 1. sor 1. eleme  -->
                   <div class="app-card">
                     <span>
-                      hamarosan....
+                      Similar colors
                     </span>
-                    <!-- <div class="app-card__subtext" style="text-align:left">
-                      <div
-                        class="imageContainer" :style="'width:100%;background:url('+backendURL+selectedColor.nature.formats.thumbnail.url+');'">
+                    <div class="app-card__subtext" style="text-align:left;display:block;">
+                      <div v-for="c in generatedColors" :key="c" class="colorContainer">
+                        <div class="color" :style="'background:'+c"></div>
+                        <span style="font-size:12px;">{{c}}</span>
                       </div>
-                    </div> -->
-
+                    </div>
                   </div>
 
                   <!-- IDE JÖN AZ 1. sor 2. eleme  -->
                   <div class="app-card">
                     <span>
-                      hamarosan....
+                      Constituent colors
                     </span>
-                    <!-- <div class="app-card__subtext" style="text-align:left">
-                      <div
-                        class="imageContainer" :style="'width:100%;background:url('+backendURL+selectedColor.object_building.formats.thumbnail.url+');'">
-                      </div>
-                    </div> -->
+                    <div class="app-card__subtext" style="text-align:left">
+                      <div>{{hex}}</div>
+                      <div>Red: {{rgb[0]}}</div>
+                      <div>Green: {{rgb[1]}}</div>
+                      <div>Blue: {{rgb[2]}}</div>
+                    </div> 
                   </div>
                   <!-- IDE JÖN AZ 1. sor 3. eleme  --> 
                   <div class="app-card">
