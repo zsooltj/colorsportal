@@ -47,12 +47,13 @@
             <div class="side-wrapper">
               <div class="side-menu">
 
-                <a href="#" v-for="color in colors" :key="color.id" @click="selectColor(color)">
+                <a href="#" v-for="color in colors" :key="color.id" @click="selectColor(color)" class="colsel">
                   <div class="colorcontainer">
                     <div class="circle" :class="selectedColor.id == color.id ? 'selected':''"
                       :style="'background:' + color.name"></div>
                   </div>
                   </svg>
+                  <div class="sidecol">{{color.name}}</div>
                 </a>
 
               </div>

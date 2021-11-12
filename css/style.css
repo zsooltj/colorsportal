@@ -969,3 +969,32 @@ body.light-mode .video-bg:before {
   width:100%;
   border-radius: 10px;
 }
+
+.sidecol{
+  width:200px;
+  background:red;
+  position:absolute;
+  left:100px;
+  margin-top:-45px;
+  border-radius: 10px;
+  padding:5px;
+  display:none;
+}
+.sidecol{
+  width:100px;
+  background:rgba(0,0,0,0.7);
+  position:absolute;
+  margin-top:-65px;
+  border-radius: 10px;
+  padding:5px;
+  opacity:0;
+  margin-left: -95px;
+  transition: all 1s ease;
+  display:block;
+  pointer-events: none;
+  text-align: center;
+  font-size: 10px;
+}
+.colsel:hover .sidecol{
+  opacity:1;
+}
