@@ -55,13 +55,11 @@
                   </svg>
                   <div class="sidecol">{{color.name}}</div>
                 </a>
-
               </div>
             </div>
-
           </div>
-          <div class="main-container">
 
+          <div class="main-container">
             <div class="content-wrapper">
               <div class="content-section" v-if="selectedColor.id != null" style="margin-top:0">
                 <div class="apps-card">
@@ -106,7 +104,7 @@
                 </div>
                 <br><br>
                 <div class="apps-card">
-                  <!-- IDE JÖN AZ 1. sor 1. eleme  -->
+                  <!-- IDE JÖN AZ 2. sor 1. eleme  -->
                    <div class="app-card">
                     <span>
                       Read more about {{selectedColor.name}}
@@ -119,7 +117,7 @@
                   </div>
 
 
-                  <!-- IDE JÖN AZ 1. sor 2. eleme  -->
+                  <!-- IDE JÖN AZ 2. sor 2. eleme  -->
                   <div class="app-card">
                    <div class="app-card__subtext" style="text-align:left">
                       <div class="colorbox" :style="'background:'+selectedColor.name"></div>
@@ -130,7 +128,7 @@
                     </div>
                   </div>
 
-                  <!-- IDE JÖN AZ 1. sor 3. eleme  -->
+                  <!-- IDE JÖN AZ 2. sor 3. eleme  -->
                   <div class="app-card">
                     <span>
                       {{selectedColor.symbols[1] ? selectedColor.symbols[1].symbol_name: ''}}
@@ -144,7 +142,7 @@
                 </div>
                 <br><br>
                 <div class="apps-card">
-                  <!-- IDE JÖN AZ 1. sor 1. eleme  -->
+                  <!-- IDE JÖN AZ 3. sor 1. eleme  -->
                   <div class="app-card">
                     <span>
                       Similar colors
@@ -157,7 +155,7 @@
                     </div>
                   </div>
 
-                  <!-- IDE JÖN AZ 1. sor 2. eleme  -->
+                  <!-- IDE JÖN AZ 3. sor 2. eleme  -->
                   <div class="app-card">
                     <span>
                       Constituent colors
@@ -169,7 +167,7 @@
                       <div>Blue: {{rgb[2]}}</div>
                     </div> 
                   </div>
-                  <!-- IDE JÖN AZ 1. sor 3. eleme  --> 
+                  <!-- IDE JÖN AZ 3. sor 3. eleme  --> 
                   <div class="app-card">
                     <span>
                       {{selectedColor.symbols[2] ? selectedColor.symbols[2].symbol_name: ''}}
