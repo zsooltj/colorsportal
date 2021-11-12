@@ -98,7 +98,7 @@
                       {{selectedColor.symbols[0] ? selectedColor.symbols[0].symbol_name: ''}}
                     </span>
                     <div class="app-card__subtext" style="text-align:left">
-                      <img :src="backendURL+selectedColor.symbols[0].symbolUrl.formats.thumbnail.url" class="symbolimg" v-if="selectedColor.symbols[0]">
+                      <img :src="backendURL+selectedColor.symbols[0].symbol_image.formats.thumbnail.url" class="symbolimg" v-if="selectedColor.symbols[0]">
                       <div class="imageContainer" v-else>Nincs megadva</div>
                     </div>
  
@@ -136,7 +136,7 @@
                       {{selectedColor.symbols[1] ? selectedColor.symbols[0].symbol_name: ''}}
                     </span>
                     <div class="app-card__subtext" style="text-align:left">
-                      <img :src="backendURL+selectedColor.symbols[1].symbolUrl.formats.thumbnail.url" class="symbolimg" v-if="selectedColor.symbols[1]">
+                      <img :src="backendURL+selectedColor.symbols[1].symbol_image.formats.thumbnail.url" class="symbolimg" v-if="selectedColor.symbols[1]">
                       <div class="imageContainer" v-else>Nincs megadva</div>
                     </div>
 
@@ -174,7 +174,7 @@
                       {{selectedColor.symbols[2] ? selectedColor.symbols[0].symbol_name: ''}}
                     </span>
                     <div class="app-card__subtext" style="text-align:left">
-                      <img :src="backendURL+selectedColor.symbols[2].symbolUrl.formats.thumbnail.url" class="symbolimg" v-if="selectedColor.symbols[2]">
+                      <img :src="backendURL+selectedColor.symbols[2].symbol_image.formats.thumbnail.url" class="symbolimg" v-if="selectedColor.symbols[2]">
                       <div class="imageContainer" v-else>Nincs megadva</div>
                     </div>
 
