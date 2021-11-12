@@ -959,3 +959,7 @@ body.light-mode .video-bg:before {
   text-align: center;
   display: inline-block;
 }
+
+.btitle{
+  text-transform: capitalize;
+}
