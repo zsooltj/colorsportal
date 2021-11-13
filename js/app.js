@@ -39,7 +39,12 @@ var app = new Vue({
     selectColor(color) {
       // document.getElementById("scale").innerHTML = ""
       this.hex = color.name.colorNameToHex()
-      this.rgb = this.hex.replace("#","").convertToRGB()
+      try{
+        this.rgb = this.hex.replace("#","").convertToRGB()
+      }catch(e){
+        console.log(e)
+      }
+      
 
       this.selectedColor = color;
       this.doColors(color.name)
@@ -90,11 +95,18 @@ var app = new Vue({
         });
       },
       doColors(color){
-
-        this.generatedColors = randomColor({
-          count: 10,
-          hue: this.hex
-       });
+        try{
+          this.generatedColors = randomColor({
+            count: 10,
+            hue: this.hex 
+         });
+        }catch(e){
+          this.generatedColors = randomColor({
+            count: 10,
+            hue: color
+         });
+        }
+       
         // var shadesOfWhite = this.getGradColors(color, 'white', 30);
         // shades.forEach(this.generateSpan);
 
