@@ -118,13 +118,14 @@
 
 
                   <!-- IDE JÖN AZ 2. sor 2. eleme  -->
-                  <div class="app-card">
-                   <div class="app-card__subtext" style="text-align:left">
+                  <div class="app-card" >
+                   <div class="app-card__subtext" style="text-align:left" >
                       <div class="colorbox" :style="'background:'+selectedColor.name"></div>
-                      <div>Fordítás 1</div>
-                      <div>Fordítás 2</div>
-                      <div>Fordítás 3</div>
-                      <div>Fordítás 4</div>
+                      <div v-if="selectedColor.translations">
+                        <div v-for="tr in selectedColor.translations.split('\n')" :key="tr" >
+                          {{tr}}
+                        </div>
+                      </div>
                     </div>
                   </div>
 
